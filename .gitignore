@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Appli officielle décompilée (propriétaire, ~108 Mo) — à garder en local uniquement
+reference/apk/
+
+# GIF tiers de provenance inconnue / trop lourds pour le dépôt
+assets/0cbfbe6caf716ba532b6fbbab82ff5a4.gif
+assets/dlrem5w-95759c25-c35d-44c1-a6d0-361ceeedbea3.gif
+assets/e1f23dfb401e68caf9e0d81e469a2b46.gif
+
+# Captures Bluetooth Android (peuvent contenir des données personnelles)
+btsnoop_hci*.log
+*.cfa
+bugreport*.zip
+
+# Sorties générées (--preview, --contact, …)
+apercu*.png
+out*.png
+preview*.png
+sheet*.png
+
+# Réglages locaux Claude Code / éditeurs / OS
+.claude/settings.local.json
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store
