@@ -1,0 +1,100 @@
+PS> uv run glasses_ble.py dump AA:BB:CC:DD:EE:FF
+[23:42:08.574] Connecté. Énumération du GATT :
+
+┌─ Service 00001800-0000-1000-8000-00805f9b34fb
+│    (Generic Access Profile)
+│  • Char 00002a00-0000-1000-8000-00805f9b34fb  [read,write]  handle=2
+│      desc: Device Name
+│      read: 47 4c 41 53 53 45 53 2d 30 32 30 35 37 41   | GLASSES-02057A
+│  • Char 00002a01-0000-1000-8000-00805f9b34fb  [read,write]  handle=4
+│      desc: Appearance
+│      read: 00 00   | ..
+│  • Char 00002a04-0000-1000-8000-00805f9b34fb  [read]  handle=6
+│      desc: Peripheral Preferred Connection Parameters
+│      read: 2c 01 40 01 04 00 58 02   | ,.@...X.
+│  • Char 00002aa6-0000-1000-8000-00805f9b34fb  [read]  handle=8
+│      desc: Central Address Resolution
+│      read: 00   | .
+└─
+┌─ Service 00001801-0000-1000-8000-00805f9b34fb
+│    (Generic Attribute Profile)
+│  • Char 00002a05-0000-1000-8000-00805f9b34fb  [indicate,read]  handle=13
+│      desc: Service Changed
+│      read: 01 00 ff ff   | ....
+│      descr 00002902-0000-1000-8000-00805f9b34fb  handle=15
+└─
+┌─ Service 0000fff0-0000-1000-8000-00805f9b34fb
+│    (Vendor specific)
+│  • Char d44bc439-abfd-45a2-b575-925416129600  [write-without-response,write]  handle=17
+│      descr 00002901-0000-1000-8000-00805f9b34fb  handle=19
+│  • Char d44bc439-abfd-45a2-b575-92541612960a  [write-without-response,write]  handle=20
+│      descr 00002901-0000-1000-8000-00805f9b34fb  handle=22
+│  • Char d44bc439-abfd-45a2-b575-92541612960b  [write-without-response,write]  handle=23
+│      descr 00002901-0000-1000-8000-00805f9b34fb  handle=25
+│  • Char d44bc439-abfd-45a2-b575-925416129601  [notify,write-without-response,write]  handle=26
+│      descr 00002902-0000-1000-8000-00805f9b34fb  handle=28
+└─
+┌─ Service 0000fd00-0000-1000-8000-00805f9b34fb
+│    (Vendor specific)
+│  • Char 0000fd01-0000-1000-8000-00805f9b34fb  [write-without-response]  handle=30
+│      desc: Vendor specific
+│  • Char 0000fd02-0000-1000-8000-00805f9b34fb  [notify,write]  handle=32
+│      desc: Vendor specific
+│      descr 00002902-0000-1000-8000-00805f9b34fb  handle=34
+└─
+
+Terminé. Note les UUID en 'write'/'write-without-response' : c'est là que
+l'appli envoie texte, images et animations aux lunettes
+
+PS> uv run glasses_ble.py monitor AA:BB:CC:DD:EE:FF
+[23:43:12.910] Connecté. Énumération du GATT :
+
+┌─ Service 00001800-0000-1000-8000-00805f9b34fb
+│    (Generic Access Profile)
+│  • Char 00002a00-0000-1000-8000-00805f9b34fb  [read,write]  handle=2
+│      desc: Device Name
+│      read: 47 4c 41 53 53 45 53 2d 30 32 30 35 37 41   | GLASSES-02057A
+│  • Char 00002a01-0000-1000-8000-00805f9b34fb  [read,write]  handle=4
+│      desc: Appearance
+│      read: 00 00   | ..
+│  • Char 00002a04-0000-1000-8000-00805f9b34fb  [read]  handle=6
+│      desc: Peripheral Preferred Connection Parameters
+│      read: 2c 01 40 01 04 00 58 02   | ,.@...X.
+│  • Char 00002aa6-0000-1000-8000-00805f9b34fb  [read]  handle=8
+│      desc: Central Address Resolution
+│      read: 00   | .
+└─
+┌─ Service 00001801-0000-1000-8000-00805f9b34fb
+│    (Generic Attribute Profile)
+│  • Char 00002a05-0000-1000-8000-00805f9b34fb  [indicate,read]  handle=13
+│      desc: Service Changed
+│      read: 01 00 ff ff   | ....
+│      descr 00002902-0000-1000-8000-00805f9b34fb  handle=15
+└─
+┌─ Service 0000fff0-0000-1000-8000-00805f9b34fb
+│    (Vendor specific)
+│  • Char d44bc439-abfd-45a2-b575-925416129600  [write-without-response,write]  handle=17
+│      descr 00002901-0000-1000-8000-00805f9b34fb  handle=19
+│  • Char d44bc439-abfd-45a2-b575-92541612960a  [write-without-response,write]  handle=20
+│      descr 00002901-0000-1000-8000-00805f9b34fb  handle=22
+│  • Char d44bc439-abfd-45a2-b575-92541612960b  [write-without-response,write]  handle=23
+│      descr 00002901-0000-1000-8000-00805f9b34fb  handle=25
+│  • Char d44bc439-abfd-45a2-b575-925416129601  [notify,write-without-response,write]  handle=26
+│      descr 00002902-0000-1000-8000-00805f9b34fb  handle=28
+└─
+┌─ Service 0000fd00-0000-1000-8000-00805f9b34fb
+│    (Vendor specific)
+│  • Char 0000fd01-0000-1000-8000-00805f9b34fb  [write-without-response]  handle=30
+│      desc: Vendor specific
+│  • Char 0000fd02-0000-1000-8000-00805f9b34fb  [notify,write]  handle=32
+│      desc: Vendor specific
+│      descr 00002902-0000-1000-8000-00805f9b34fb  handle=34
+└─
+
+[23:43:13.062] Abonnement 00002a05-0000-1000-8000-00805f9b34fb échoué : Could not start notify on 000D: Access Denied
+[23:43:13.089] Abonné à d44bc439-abfd-45a2-b575-925416129601
+[23:43:13.119] Abonné à 0000fd02-0000-1000-8000-00805f9b34fb
+
+[23:43:13.119] Écoute 60s (Ctrl-C pour arrêter)…
+
+PS>
